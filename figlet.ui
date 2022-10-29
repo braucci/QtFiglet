@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>510</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PiFiglet - Biagio Raucci</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>451</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLineEdit" name="lE_testo"/>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QPlainTextEdit" name="pTE_Figlet">
+      <property name="font">
+       <font>
+        <family>Courier New</family>
+       </font>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QPlainTextEdit::NoWrap</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QComboBox" name="cB_font"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pB_Figlet">
+      <property name="text">
+       <string>Figlet!</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pB_Figlet</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>pB_FigletClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>447</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>501</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lE_testo</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Form</receiver>
+   <slot>pB_FigletClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>356</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>10</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lE_testo</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>lE_testoChange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>pB_FigletClick()</slot>
+  <slot>lE_testoChange()</slot>
+ </slots>
+</ui>
